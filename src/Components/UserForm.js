@@ -32,7 +32,7 @@ export default function UserForm({ addContact }) {
   };
 
   return (
-    <div className="form-container w-25">
+    <div className="form-container w-50">
       <Form onSubmit={handleSubmit}>
         <h3>Contact Form</h3>
 
@@ -85,7 +85,7 @@ export default function UserForm({ addContact }) {
         />
 
         <p></p>
-        <Button varian="primary" size="sm" type="submit">
+        <Button variant="primary" size="sm" type="submit">
           Submit Contact
         </Button>
         <p></p>

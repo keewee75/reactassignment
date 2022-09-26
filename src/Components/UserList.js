@@ -7,7 +7,7 @@ export default function UserList({ contacts }) {
     return <h5>The list is empty</h5>;
   } else {
     return (
-      <Table className="w-75" striped bordered hover size="sm">
+      <Table className="w-100" striped bordered hover size="sm">
         <thead>
           <tr>
             <th>First Name</th>
