@@ -38,6 +38,7 @@ code {
   margin-left: auto;
 }
 .navbar a {
+  color: #4267B2;
   margin-left: 16px;
   text-decoration: none;
   padding: 6px;
@@ -52,6 +53,7 @@ code {
 }
 
 .tablelinks a{
+  color: #4267B2;
   text-decoration: none;
 }
 .tablelinks a:hover {
