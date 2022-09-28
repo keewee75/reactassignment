@@ -5,8 +5,8 @@ const PersonDetails = () => {
 
     return (
         <div className="person-details">
-            <h2>Person details: </h2>
-            <p>{ id }</p>
+            <h2>Person details page for id:</h2>
+            <h2>{ id }</h2>
         </div>
     );
 }
