@@ -1,5 +1,6 @@
 import { Table } from "react-bootstrap";
 import uuid from "react-uuid";
+import { Link } from "react-router-dom";
 
 // retrieve contacts from App.js as props
 export default function UserList({ contacts }) {
@@ -7,7 +8,7 @@ export default function UserList({ contacts }) {
     return <h5>The list is empty</h5>;
   } else {
     return (
-      <Table className="w-100" striped bordered hover size="sm">
+      <Table className="w-100" bordered hover size="sm">
         <thead>
           <tr>
             <th>First Name</th>
@@ -17,13 +18,17 @@ export default function UserList({ contacts }) {
             <th>Email</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="tablelinks">
           {/* use .map to loop */}
           {contacts.map((contact) => (
             // <tr key={contact.email}>
             // changed to react-uuid for unique keys
             <tr key={uuid()}>
-              <td>{contact.firstname}</td>
+              <td>
+              <Link to={`/Components/PersonDetails/${contact.firstname+contact.lastname}`}>
+                {contact.firstname}
+              </Link>
+              </td>
               <td>{contact.lastname}</td>
               <td>{contact.age}</td>
               <td>{contact.nationality}</td>

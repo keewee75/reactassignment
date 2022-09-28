@@ -1,28 +1,31 @@
+import { useMemo, useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import PersonList from "./Components/PersonList";
+import PersonDetails from "./Components/PersonDetails";
+import LoginForm from "./Components/LoginForm";
+import { UserContext } from "./Components/UserContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-function App() {
 
+function App() {
+  const [value, setValue] = useState(null);
+  const providerValue = useMemo(() => ({value, setValue}), [value, setValue]);
   return (
     <div className="App">
-      <BrowserRouter>
-        <nav className="navbar">
-          <h1>React Assignmnent</h1>
-          <div className="links">
-            <Link to="/">Home</Link>
-            <Link to="/Components/PersonList">Person List</Link>
-          </div>
-        </nav>
+      <UserContext.Provider value={providerValue}>
+        <Navbar />
         <div className="content">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/Components/PersonList" element={<PersonList />} />
+            <Route path="/PersonList" element={<PersonList />} />
+            <Route path="/Components/PersonDetails/:id/*" element={<PersonDetails />} />
+            <Route path="/LoginForm" element={<LoginForm />} />
           </Routes>
         </div>
-      </BrowserRouter>
+      </UserContext.Provider>
     </div>
   );
 }

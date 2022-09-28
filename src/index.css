@@ -50,3 +50,10 @@ code {
   margin: 40px auto;
   padding: 20px;
 }
+
+.tablelinks a{
+  text-decoration: none;
+}
+.tablelinks a:hover {
+  color: #f1356d;
+}
