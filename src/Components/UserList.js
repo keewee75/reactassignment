@@ -1,12 +1,17 @@
 import { Table } from "react-bootstrap";
 import uuid from "react-uuid";
 import { Link } from "react-router-dom";
+import { UserContext } from "./UserContext";
+import { useContext } from "react";
 
-// retrieve contacts from App.js as props
+// retrieve contacts from PersonList.js as props
 export default function UserList({ contacts }) {
+  //const {contacts} = useContext(UserContext)
+
   if (contacts.length === 0) {
     return <h5>The list is empty</h5>;
   } else {
+
     return (
       <Table className="w-100" bordered hover size="sm">
         <thead>
