@@ -3,8 +3,8 @@ import { Form, Button } from "react-bootstrap";
 
 // retrieve addContact function from PersonList.js as props.
 export default function UserForm({ addContact }) {
+
   // useState hook to manage state in functional components.
-  
   const [contactInfo, setContactInfo] = useState({
     firstname: "",
     lastname: "",

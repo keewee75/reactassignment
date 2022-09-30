@@ -12,12 +12,8 @@ export default function Navbar() {
     <div className="links">
       <Link to="/">Home</Link>
       <Link to="/PersonList">Person List</Link>
-      <Link to="/Test">Test</Link>
-      {/* <Link to="/Formcomponent">Form</Link>
-      <Link to="/Listcomponent">List</Link> */}
       { !value && <Link to="/LoginForm">Login</Link> }
       { value && <Link to={"/"} onClick={() => {setValue(null);}} >Logout</Link> }
-      {/* { value && <Link to="/LoginForm">Logout</Link> } */}
       {value}
     </div>
   </nav>

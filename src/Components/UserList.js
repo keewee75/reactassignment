@@ -1,12 +1,9 @@
 import { Table } from "react-bootstrap";
 import uuid from "react-uuid";
 import { Link } from "react-router-dom";
-import { UserContext } from "./UserContext";
-import { useContext } from "react";
 
 // retrieve contacts from PersonList.js as props
 export default function UserList({ contacts }) {
-  //const {contacts} = useContext(UserContext)
 
   if (contacts.length === 0) {
     return <h5>The list is empty</h5>;
@@ -26,8 +23,7 @@ export default function UserList({ contacts }) {
         <tbody className="tablelinks">
           {/* use .map to loop */}
           {contacts.map((contact) => (
-            // <tr key={contact.email}>
-            // changed to react-uuid for unique keys
+
             <tr key={uuid()}>
               <td>
               <Link to={`/Components/PersonDetails/${contact.firstname+contact.lastname}`}>
