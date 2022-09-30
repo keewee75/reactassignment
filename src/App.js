@@ -12,6 +12,15 @@ import "./App.css";
 function App() {
   
   const [value, setValue] = useState(null);
+
+    // create array using useState to store the contact form data.
+    // using Lifting State Up to preserve the contact list while browsing the site.
+    const [contacts, updateContacts] = useState([]);
+
+    // update contact state.
+     const addContact = (contact) => {
+       updateContacts(contacts => [...contacts, contact]);
+    };
   
   return (
     <div className="App">
@@ -20,7 +29,7 @@ function App() {
         <div className="content">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/PersonList" element={<PersonList />} />
+            <Route path="/PersonList" element={<PersonList {...{ addContact, contacts }} />} />
             <Route path="/Components/PersonDetails/:id/*" element={<PersonDetails />} />
             <Route path="/LoginForm" element={<LoginForm />} />
           </Routes>
