@@ -1,9 +1,21 @@
 import { Table } from "react-bootstrap";
 import uuid from "react-uuid";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useEffect } from "react";
 
 // retrieve contacts from PersonList.js as props
 export default function UserList({ contacts }) {
+
+  useEffect(() => {
+    axios.get('https://localhost:7260/ReactApi/People/2')
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }, []);
 
   if (contacts.length === 0) {
     return <h5>The list is empty</h5>;
