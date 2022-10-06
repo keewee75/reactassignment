@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { UserContext } from "./UserContext";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 export default function Navbar() {
     const {value, setValue} = useContext(UserContext);
@@ -11,7 +11,8 @@ export default function Navbar() {
 
     <div className="links">
       <Link to="/">Home</Link>
-      <Link to="/PersonList">Person List</Link>
+      {/* <Link to="/PersonList">Person List</Link> */}
+      <Link to="/AllUsers">Users</Link>
       { !value && <Link to="/LoginForm">Login</Link> }
       { value && <Link to={"/"} onClick={() => {setValue(null);}} >Logout</Link> }
       {value}

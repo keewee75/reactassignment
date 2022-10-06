@@ -5,6 +5,8 @@ import Home from "./Components/Home";
 import PersonList from "./Components/PersonList";
 import PersonDetails from "./Components/PersonDetails";
 import LoginForm from "./Components/LoginForm";
+import AllUsers from "./Pages/AllUsers";
+import AddUser from "./Pages/AddUser";
 import { UserContext } from "./Components/UserContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -30,6 +32,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/PersonList" element={<PersonList {...{ addContact, contacts }} />} />
+            <Route path="/AllUsers" element={<AllUsers />} />
+            <Route path="/AddUser" element={<AddUser />} />
             <Route path="/Components/PersonDetails/:id/*" element={<PersonDetails />} />
             <Route path="/LoginForm" element={<LoginForm />} />
           </Routes>
