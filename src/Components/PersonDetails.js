@@ -115,13 +115,23 @@ const PersonDetails = () => {
           .filter((person) => person.personId === userId)
           .map((x) => (
             <div key={uuid()}>
-              <h5>City: {x.city.cityName}</h5>
-              <p></p>
-              <h5>Phone number: {x.phoneNumber}</h5>
-              <p>Country Id: {x.city.countryId}</p>
+              <div style={{display: "flex"}}>
+              <h5>City:&nbsp;</h5>
+              <p>{x.city.cityName}&nbsp;&nbsp;</p>
+              </div>
+              <div style={{display: "flex"}}>
+              <h5>Phone number:&nbsp;</h5>
+              <p>{x.phoneNumber}&nbsp;&nbsp;</p>
+              </div>
+              <div style={{display: "flex"}}>
+              <h5>Country:&nbsp;</h5>
+              <p> Id: {x.city.countryId}&nbsp;&nbsp;</p>
+              </div>
+
             </div>
           ))}
       </div>
+      
     </>
   );
 };
