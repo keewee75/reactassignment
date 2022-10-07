@@ -8,14 +8,11 @@ const AddUser = () => {
   const phone = useRef("");
   const city = useRef("");
   // const language = useRef("");
-
-  //   const [countries, setCountries] = useState([]);
-  //   const [currentSelectedCountry, SetCurrentSelectedCountry] = useState("");
-
-  ////////////////////Get Countries and Cities/////////////////////////
+  const navigate = useNavigate();
   const [fromCountires, setFromCountries] = useState([]);
   const [fromCities, setFromCities] = useState([]);
 
+  /////////////////////Testing axios in a function/////////////////////
   let getData = async () => {
     let responseCountries = await axios.get(
       "https://localhost:7260/ReactApi/getcountries"
@@ -26,27 +23,10 @@ const AddUser = () => {
 
   useEffect(() => {
     getData();
-    // axios
-    //   .get("https://localhost:7260/ReactApi/getcountries")
-    //   .then((response) => {
-    //     setFromCountries((existingData) => {
-    //       //console.log(response);
-    //       return response.data;
-    //     });
-    //   });
   }, []);
+  ////////////////////////////////////////////////////////////////////
 
-  //   useEffect(() => {
-  //     axios
-  //       .get("https://localhost:7260/ReactApi/getcities")
-  //       .then((response) => {
-  //         setFromCities((existingData) => {
-  //           //console.log(response);
-  //           return response.data;
-  //         });
-  //       });
-  //   }, []);
-
+  ////////////// Handling countries and cities in form ///////////////
   const handleFromCountries = (e) => {
     const country = fromCountires.find(
       (country) => country.countryName === e.target.value
@@ -54,10 +34,9 @@ const AddUser = () => {
     //setFromCountries(country.countryName);
     setFromCities(country.cities);
   };
-  /////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
 
-  const navigate = useNavigate();
-
+///////////////////// Add new user ///////////////////////////////////
   function addUserHandler() {
     var payload = {
       name: userName.current.value,
@@ -67,11 +46,10 @@ const AddUser = () => {
     };
 
     axios.post("https://localhost:7260/ReactApi", payload).then((response) => {
-      //console.log(response);
       navigate("/AllUsers");
     });
-    //console.log(payload);
   }
+///////////////////////////////////////////////////////////////////////
 
   return (
     <>
