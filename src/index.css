@@ -23,6 +23,12 @@ code {
   font-family: "Quicksand";
   color: #333;
 }
+
+.keewee {
+  width: 10%;
+  height: 10%;
+}
+
 .navbar {
   padding: 20px;
   display: flex;
