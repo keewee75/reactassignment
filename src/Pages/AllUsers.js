@@ -30,12 +30,10 @@ const AllUsers = () => {
         Add User
       </Button>
       <p></p>
-      <Table className="w-100" bordered hover size="sm">
+      <Table className="w-25" bordered hover size="sm">
         <thead>
           <tr>
             <th>Name</th>
-            <th>Phone</th>
-            <th>City</th>
           </tr>
         </thead>
         <tbody className="tablelinks">
@@ -47,8 +45,6 @@ const AllUsers = () => {
                   {user.name}
                 </Link>
               </td>
-              <td>{user.phoneNumber}</td>
-              <td>{user.cityId}</td>
             </tr>
           ))}
         </tbody>

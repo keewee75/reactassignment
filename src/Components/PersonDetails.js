@@ -38,7 +38,7 @@ const PersonDetails = () => {
       .delete(`https://localhost:7260/ReactApi/${itemToDelete}`)
       .then((response) => {
         setUser((existingData) => {
-          return existingData.filter(_ => _.id !== itemToDelete);
+          return existingData.filter((_) => _.id !== itemToDelete);
         });
         setItemToDelete(0);
         setShowModal(false);
@@ -61,26 +61,26 @@ const PersonDetails = () => {
 
   return (
     <>
-      
-      
-        <Delete
-          showModal={showModal}
-          title="Delete Confirmation"
-          body="Are you sure to delete the user?"
-          closeConfirmPopupHandler={closeConfirmPopupHandler}
-          deleteConfirmHandler={deleteConfirmHandler}
-        >
-        </Delete>
+      <Delete
+        showModal={showModal}
+        title="Delete Confirmation"
+        body="Are you sure to delete the user?"
+        closeConfirmPopupHandler={closeConfirmPopupHandler}
+        deleteConfirmHandler={deleteConfirmHandler}
+      ></Delete>
 
-        <Button
-            variant="danger"
-            size="sm"
-            type="button"
-            onClick={() => {showConfirmPopupHandler(id);}}
-          >
-            Delete User
-          </Button>
-      
+      <Button
+        variant="danger"
+        size="sm"
+        type="button"
+        onClick={() => {
+          showConfirmPopupHandler(id);
+        }}
+      >
+        Delete User
+      </Button>
+      <p></p>
+
       <div className="person-details">
         {user
           .filter((person) => person.personId === userId)
@@ -97,7 +97,7 @@ const PersonDetails = () => {
           });
         })}
       </div> */}
-
+      <p></p>
       <div>
         <h5>Languages</h5>
         {user
@@ -117,6 +117,7 @@ const PersonDetails = () => {
             <div key={uuid()}>
               <h5>City: {x.city.cityName}</h5>
               <p></p>
+              <h5>Phone number: {x.phoneNumber}</h5>
               <p>Country Id: {x.city.countryId}</p>
             </div>
           ))}
